@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>Cursors in PL/SQL</h2>
+    <h4>In the context of databases and SQL, a cursor is a database object used to retrieve and manipulate data from a result set returned by a SQL query. Cursors provide a way to iterate over the rows of a result set one at a time, enabling programmatic control over data retrieval and manipulation. Here's an explanation of cursors:</h4>
+    <h4>There are two types of Cursors:
+        1) Implicit Cursors 2) Explicit Cursors</h4>
+        <h2>Attributes of cursors</h2>
+        <table>
+            <tr>
+                <th>Attributes</th>
+                <th>description</th>
+            </tr>
+            <tr>
+                <td>%FOUND</td>
+                <td>Returns TRUE if a fetch operation successfully retrieves a row.</td>
+            </tr>
+            <tr>
+                <td>%NOTFOUND</td>
+                <td>Returns TRUE if a fetch operation fails to retrieve a row.</td>
+            </tr>
+            <tr>
+                <td>%ROWCOUNT</td>
+                <td>Returns the number of rows fetched so far.</td>
+            </tr>
+            <tr>
+                <td>%ISOPEN</td>
+                <td>Returns TRUE if the cursor is open, FALSE if closed.</td>
+            </tr>
+        </table>
+</body>
+</html>

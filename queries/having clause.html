@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>SQL HAVING Clause</h2>
+    <h4>The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.</h4>
+    <h2>Query for having clause...</h2>
+    <p>
+        <code>
+            select count(roll_no),loc 
+            from student 
+            group by loc
+            having count(roll_no);
+        </code>
+    </p>
+    <h2>Output</h2>
+    <table>
+        <tr>
+            <th>count(roll_no)</th>
+            <th>loc</th>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>dallas</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>boston</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>callifornia</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>tronto</td>
+        </tr>
+    </table>
+</body>
+</html>

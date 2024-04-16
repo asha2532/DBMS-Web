@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>SQL NULL Values</h2>
+    <h4>A field with a NULL value is a field with no value.
+
+        If a field in a table is optional, it is possible to insert a new record or update a record without adding a value to this field. Then, the field will be saved with a NULL value</h4>
+    </p>
+    <h2>query for null values....</h2>
+    <p>
+        <code>select sname from student where loc in not null;</code>
+    </p>
+    <h2>Output</h2>
+    <table>
+        <tr>
+            <th>sname</th>
+        </tr>
+        <tr>
+            <td>Annie</td>
+        </tr>
+        <tr>
+            <td>danny</td>
+        </tr>
+        <tr>
+            <td>alana</td>
+        </tr>
+        <tr>
+            <td>robert</td>
+        </tr>
+        <tr>
+            <td>maria</td>
+        </tr>
+    </table>
+</body>
+</html>

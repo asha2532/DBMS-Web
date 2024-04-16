@@ -1,0 +1,25 @@
+table{
+    width: 60%;
+    margin: auto;
+}
+th, td{
+    padding: 10px;
+    text-align: center;
+}
+th{
+    background-color: brown;
+    color: white;
+}
+tr:nth-child(even){
+    background-color: #FFCAD4;
+}
+tr:nth-child(odd){
+    background-color: #ffcad467;
+}
+p{
+    padding: 10px 20px;
+    border-radius: 10px 0px;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>MySQL WHERE Clause</h2>
+    <h4>The WHERE clause is used to filter records.
+
+        It is used to extract only those records that fulfill a specified condition.</h4>
+        
+
+        <h2>Query for WHERE clause...</h2>
+        
+        <p>
+            <code>
+                select name from student where roll_no=7072;
+            </code>
+        </p>
+
+        <h2>Output</h2>
+        <table>
+        <tr>
+            <th>Sname</th>
+            <th>roll_no</th>
+            <th>age</th>
+            <th>loc</th>
+            <th>ph_no</th>
+            <th>marks</th>
+        </tr>
+        <tr>
+            <td>Annie</td>
+            <td>7072</td>
+            <td>20</td>
+            <td>dallas</td>
+            <td>1234567897</td>
+            <td>92</td>
+        </tr>
+    </table>
+    <p>
+        <code>
+            select Sname from student where  loc=dallas;
+        </code>
+    </p>
+    <h2>Output</h2>
+    <table>
+        <tr>
+            <th>Sname</th>
+        </tr>
+        <tr>
+            <td>Annie</td>
+
+        </tr>
+        <tr>
+            <td>robert</td>
+        </tr>
+    </table>
+</body>
+</html>

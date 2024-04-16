@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>Exception Handling in PL/SQL</h2>
+    <h4>Exception handling in PL/SQL allows you to handle errors gracefully and maintain control over the flow of your program. It enables you to catch and handle errors that occur during the execution of your code. Here's an overview of exception handling in PL/SQL:</h4>
+     <h2>syntax...</h2>
+     <p>
+        <code>BEGIN
+            <br>
+            -- PL/SQL block
+            <br>
+        EXCEPTION
+        <br>
+            WHEN exception1 THEN
+            <br>
+                -- Handling code for exception1
+                <br>
+            WHEN exception2 THEN
+            <br>
+                -- Handling code for exception2
+                <br>
+            WHEN OTHERS THEN
+            <br>
+                -- Handling code for any other unhandled exception
+                <br>
+        END;</code>
+     </p>
+     <h2>example program..</h2>
+     <p>
+        <code>Let's consider a simple PL/SQL block that performs division and handles the ZERO_DIVIDE predefined exception:</code>
+     </p>
+     <p>
+        <code>DECLARE
+            <br>
+            numerator NUMBER := 10;
+            <br>
+            denominator NUMBER := 0;
+            <br>
+            result NUMBER;
+            <br>
+        BEGIN
+        <br>
+            result := numerator / denominator;
+            <br>
+            DBMS_OUTPUT.PUT_LINE('Result of division: ' || result);
+            <br>
+        EXCEPTION
+        <br>
+            WHEN ZERO_DIVIDE THEN
+            <br>
+                DBMS_OUTPUT.PUT_LINE('Error: Division by zero');
+                <br>
+            WHEN OTHERS THEN
+            <br>
+                DBMS_OUTPUT.PUT_LINE('Error: An unexpected error occurred');
+                <br>
+        END;</code>
+     </p>
+     <h2>output..</h2>
+     <p>
+        <code>
+        Error: Division by zero
+        </code>
+     </p>
+</body>
+</html>

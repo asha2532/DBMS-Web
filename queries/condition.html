@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>ITERATIVE CONTROL STRUCTURE</h2>
+    <h4>In PL/SQL, iterative control structures allow you to execute a block of code repeatedly until a certain condition is met. The primary construct for iterative control in PL/SQL is the LOOP statement. Additionally, PL/SQL also supports FOR LOOP, which is a specialized form of iterative control.</h4>
+    <h2>1.INFINITE LOOP</h2>
+    <h4>The LOOP statement repeatedly executes a block of code until an exit condition is met. The exit condition is typically determined using an EXIT statement within the loop.</h4>
+    <h2>syntax..</h2>
+    <p>
+        <code> LOOP
+            <br>
+            -- Code block to execute repeatedly
+            <br>
+            EXIT WHEN condition; -- Exit condition
+            <br>
+        END LOOP;
+    </code>
+    </p>
+    <h2>example..</h2>
+    <p>
+        <code> DECLARE
+            <br>
+            counter NUMBER := 1;
+            <br>
+        BEGIN
+        <br>
+            LOOP
+            <br>
+                DBMS_OUTPUT.PUT_LINE('Counter: ' || counter);
+                <br>
+                counter := counter + 1;
+                <br>
+                EXIT WHEN counter > 5; -- Exit loop when counter exceeds 5
+                <br>
+            END LOOP;
+            <br>
+        END;
+    </code>
+    </p>
+    <h2>2.FOR LOOP</h2>
+    <h4>The FOR LOOP statement is a specialized form of iterative control that iterates over a range of values. It automatically initializes a loop index variable, checks a condition, and increments the loop index variable with each iteration.</h4>
+    <h2>syntax..</h2>
+    <p>
+        <code>FOR loop_index IN [REVERSE] lower_bound..upper_bound LOOP
+            <br>
+            -- Code block to execute for each iteration
+            <br>
+        END LOOP;</code>
+    </p>
+    <h2>example..</h2>
+    <p>
+        <code>DECLARE
+            <br>
+            -- Loop over the range of numbers from 1 to 5
+            <br>
+        BEGIN
+        <br>
+            FOR i IN 1..5 LOOP
+            <br>
+                DBMS_OUTPUT.PUT_LINE('Number: ' || i);
+                <br>
+            END LOOP;
+            <br>
+        END;
+    </code>
+    </p>
+    <h2>3.WHILE LOOP</h2>
+    <h4>PL/SQL while loop is used when a set of statements has to be executed as long as a condition is true, the While loop is used. The condition is decided at the beginning of each iteration and continues until the condition becomes false.</h4>
+    <h2>syntax...</h2>
+    <p>
+        <code>WHILE
+            <br>    
+            LOOP statements;
+            <br>   
+           END LOOP; 
+        </code>
+    </p>
+    <h2>example..</h2>
+    <p>
+        <code> DECLARE 
+            <br> 
+            i INTEGER := 1;
+            <br>  
+            BEGIN  
+            <br>
+            WHILE i <= 10 LOOP 
+            <br> 
+            DBMS_OUTPUT.PUT_LINE(i);
+            <br>  
+            i := i+1;  
+            <br>
+            END LOOP;
+            <br>  
+            END;  
+        </code>
+    </p>
+</body>
+</html>

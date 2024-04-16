@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>Variables in PL/SQL</h2>
+    <p>
+        <code>In PL/SQL, variables are used to store and manipulate data within a program. They can hold various types of data, such as numbers, characters, dates, and more. Here's how you declare and use variables in PL/SQL:</code>
+    </p>
+    <h2>Syntax for Variable Declaration :</h2>
+    <p>
+        <code>variable_name datatype [NOT NULL := initial_value];</code>
+    </p>
+    <h2>Variable Scope :</h2>
+    <p>
+        <code>Variables declared in the declaration section are visible within the block where they are declared.</code>
+    </p>
+    <p>
+        <code>They can be referenced in subsequent PL/SQL statements within the same block.</code>
+    </p>
+    <h2>Initializing Variables :</h2>
+    <p>
+        <code>Variables can be initialized with an optional default value using the := assignment operator.
+
+            If a variable is not initialized, it contains a NULL value by default.</code>
+    </p>
+    <h2>Syntax for Variable initialization :</h2>
+    <p>
+        <code>variable_name := value;</code>
+    </p>
+    <h2>Example...</h2>
+    <p>
+        <code>Adding two number variables in PL/SQL:</code>
+    </p>
+    <p>
+        <code>
+            DECLARE
+            <br>
+              num1 NUMBER;
+              <br>
+              num2 NUMBER;
+              <br>
+              result NUMBER;
+              <br>
+            BEGIN
+            <br>
+              num1 := 10;
+              <br>
+              num2 := 20;
+              <br>
+              result := num1 + num2;
+              <br>
+              dbms_output.put_line('Sum : ' || result);
+              <br>
+            END;
+        </code>
+    </p>
+    <h2>Output</h2>
+    <p>
+        <code>Sum : 30</code>
+    </p>
+</body>
+</html>

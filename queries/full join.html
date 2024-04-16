@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>SQL FULL OUTER JOIN Keyword</h2>
+    <h4>The FULL OUTER JOIN keyword returns all records when there is a match in left (table1) or right (table2) table records.
+
+        Tip: FULL OUTER JOIN and FULL JOIN are the same.</h4>
+        <caption>table one...</caption>
+        <table>
+            <tr>
+                <th>roll_no</th>
+                <th>name</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>meenakshi</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>manjli</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>shetal</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>apporva</td>
+            </tr>
+            <tr>
+                 <td>5</td>
+                <td>keeto</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>nitin</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>soumya</td>
+            </tr>
+        </table>
+        <caption>table two...</caption>
+        <table>
+            <tr>
+                <th>roll_no</th>
+                <th>city</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>ajmer</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>banglore</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>udaipur</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>chitor</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>raipur</td>
+            </tr>
+        </table>
+        <h2>query to perform  full join...</h2>
+        <p>
+            <code>select name,city from table one full outer join table two on table one.name=table two.name order by city; </code>
+        </p>
+        <h2>Output</h2>
+        <table>
+            <tr>
+                <th>name</th>
+                <th>city</th>
+            </tr>
+            <tr>
+                <td>meenakshi</td>
+                <td>ajmer</td>
+            </tr>
+            <tr>
+                <td>manjli</td>
+                <td>NULL</td>
+            </tr>
+            <tr>
+                <td>sheetal</td>
+                <td>banglore</td>
+            </tr>
+            <tr>
+                <td>apporva</td>
+                <td>NULL</td>
+            </tr>
+            <tr>
+                <td>keeto</td>
+                <td>udaipur</td>
+            </tr>
+            <tr>
+                <td>nitin</td>
+                <td>chitor</td>
+            </tr>
+            <tr>
+                <td>soumya</td>
+                <td>NULL</td>
+            </tr>
+            <tr>
+                <td>NULL</td>
+                <td>raipur</td>
+            </tr>
+        </table>
+</body>
+</html> 

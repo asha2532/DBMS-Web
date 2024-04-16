@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+
+<body>
+    <h2>Precedures in PL/SQL</h2>
+    <h4>In PL/SQL, a procedure is a named block of code that performs a specific task or set of tasks. It can accept
+        input parameters, execute SQL statements, and return output parameters or a result set. Procedures provide
+        modularity and reusability in code by encapsulating a sequence of statements into a single unit. Here's an
+        overview of procedures in PL/SQL:</h4>
+    <h2>Syntax for Creating...</h2>
+    <p>
+        <code>CREATE [OR REPLACE] PROCEDURE procedure_name
+            <br>
+            (parameter1 datatype1, parameter2 datatype2, ...)
+            <br>
+        IS
+        <br>
+            -- Declarations
+            <br>
+        BEGIN
+        <br>
+            -- Procedure Logic
+            <br>
+            -- SQL Statements
+            <br>
+        END procedure_name;
+    </code>
+    </p>
+    <h2>Syntax for Executing</h2>
+    <p>
+        <code>procedure_name(value1, value2, ...);</code>
+    </p>
+    <h2>Example Program</h2>
+    <p>
+        <code>Program to show the working of Procedures</code>
+    </p>
+    <h2>Example of a Simple Procedure</h2>
+    <table>
+        <caption>student table</caption>
+        <tr>
+            <th>rollno</th>
+            <th>name</th>
+            <th>ph no.</th>
+            <th>class</th>
+            <th>marks</th>
+            <th>city</th>
+        </tr>
+        <tr>
+            <td>4201</td>
+            <td>abhishek</td>
+            <td>1234567867</td>
+            <td>bca-1</td>
+            <td>296</td>
+            <td>chandigarh</td>
+        </tr>
+        <tr>
+            <td>4202</td>
+            <td>anjali</td>
+            <td>4567891234</td>
+            <td>bca-1</td>
+            <td>286</td>
+            <td>mohali</td>
+        </tr>
+        <tr>
+            <td>4203</td>
+            <td>asha</td>
+            <td>7719406253</td>
+            <td>bca-1</td>
+            <td>280</td>
+            <td>haryana</td>
+        </tr>
+        <tr>
+            <td>4204</td>
+            <td>neha</td>
+            <td>8876543219</td>
+            <td>bca-1</td>
+            <td>276</td>
+            <td>punjab</td>
+        </tr>
+    </table>
+    <p>
+        <code>CREATE OR REPLACE PROCEDURE get_Student
+            <br>
+            (varrollNo IN student.rollNO%TYPE)
+            <br>
+        IS
+        <br>
+            var_name student.Name%TYPE;
+            <br>
+            var_marks student.Marks%TYPE;
+            <br>
+        BEGIN
+        <br>
+            SELECT Name, Marks
+            <br>
+            INTO var_name, var_marks
+            <br>
+            FROM student
+            <br>
+            WHERE rollNo = varrollNo;
+            <br>
+            DBMS_OUTPUT.PUT_LINE('Student Name: ' || var_name);
+            <br>
+            DBMS_OUTPUT.PUT_LINE('Student Marks: ' || var_marks);
+            <br>
+        END get_Student;
+     </code>
+    </p>
+    <h2>output..</h2>
+    <p>
+        <code>Procedure created.</code>
+    </p>
+    <h2>Executing Procedure get_Student</h2>
+    <p>
+        <code>BEGIN 
+            <br>
+            get_Student('4204');
+            <br> 
+        END;
+    </code>
+    </p>
+    <h2>output..</h2>
+    <p>
+        <code>Student Name: neha
+            Student Marks: 276</code>
+    </p>
+</body>
+
+</html>

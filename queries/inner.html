@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>SQL INNER JOIN</h2>
+    <h4>The INNER JOIN keyword selects records that have matching values in both tables.</h4>
+    <caption>table empDetails..</caption>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>name</th>
+            <th>salary</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>john</td>
+            <td>40000</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>alex</td>
+            <td>25000</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>simon</td>
+            <td>42000</td>
+        </tr>
+    </table>
+    <caption>table maritalStatus..</caption>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>name</th>
+            <th>status</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>john</td>
+            <td>married</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>simon</td>
+            <td>married/td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>stella</td>
+            <td>unmarried</td>
+        </tr>
+    </table>
+    <h2>query  to perform inner join....</h2>
+    <p>
+        <code> select ID,name,salary, status, from table empDetails inner join table maritalStatus on table empDetails.ID=maritalStatus.ID</code>
+
+    </p>
+    <h2>Output</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>name</th>
+            <th>salary</th>
+            <th>status</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>john</td>
+            <td>40000</td>
+            <td>married</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>simon</td>
+            <td>42000</td>
+            <td>unmarried</td>
+        </tr>
+    </table>
+</body>
+</html>

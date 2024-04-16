@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>Triggers in PL/SQL</h2>
+    <h4>Triggers in SQL are special types of stored procedures that are automatically executed or fired when certain events occur in the database. These events can include data manipulation operations like INSERT, UPDATE, DELETE, or DDL (Data Definition Language) operations like CREATE, ALTER, or DROP.
+
+        Triggers can be used to enforce business rules, maintain data integrity, and automate database operations. Here's an overview of triggers:</h4>
+
+        <h2>output...</h2>
+        <p>
+            <code>CREATE [OR REPLACE] TRIGGER trigger_name
+                <br>
+                {BEFORE | AFTER} {INSERT | UPDATE | DELETE | [DDL_EVENT]}
+                <br>
+                ON table_name
+                <br>
+                [FOR EACH ROW]
+                <br>
+                DECLARE
+                <br>
+                    -- Declarations
+                    <br>
+                BEGIN
+                <br>
+                    -- Trigger Logic
+                    <br>
+                END;
+            </code>
+        </p>
+        <h2>example program....</h2>
+        <table>
+            <caption>student table</caption>
+            <tr>
+                <th>rollno</th>
+                <th>name</th>
+                <th>ph no.</th>
+                <th>class</th>
+                <th>marks</th>
+                <th>city</th>
+            </tr>
+            <tr>
+                <td>4201</td>
+                <td>abhishek</td>
+                <td>1234567867</td>
+                <td>bca-1</td>
+                <td>296</td>
+                <td>chandigarh</td>
+            </tr>
+            <tr>
+                <td>4202</td>
+                <td>anjali</td>
+                <td>4567891234</td>
+                <td>bca-1</td>
+                <td>286</td>
+                <td>mohali</td>
+            </tr>
+            <tr>
+                <td>4203</td>
+                <td>asha</td>
+                <td>7719406253</td>
+                <td>bca-1</td>
+                <td>280</td>
+                <td>haryana</td>
+            </tr>
+            <tr>
+                <td>4204</td>
+                <td>neha</td>
+                <td>8876543219</td>
+                <td>bca-1</td>
+                <td>276</td>
+                <td>punjab</td>
+            </tr>
+        </table>
+        <p>
+            <code>CREATE OR REPLACE TRIGGER cstud
+                <br>  
+                BEFORE UPDATE ON student 
+                <br>
+                fOR EACH ROW 
+                <br>
+                BEGIN 
+                <br>
+                    IF :NEW.Marks > 300 THEN
+                    <br> 
+                        :NEW.Marks := :OLD.Marks;
+                        <br>
+                        dbms_output.put_line('Marks should be less than 300!'); 
+                        <br>
+                    END IF; 
+                    <br>
+                END;
+             </code>
+        </p>
+        <h2>output..</h2>
+        <p>
+            <code>TRIGGER CREATED</code>
+        </p>
+        <h2>Executing Trigger</h2>
+        <p>
+            <code>BEGIN
+                <br> 
+                UPDATE student SET Marks = 345 where RollNo = '4204'; 
+                <br>
+                END;
+            </code>
+        </p>
+        <h2>output..</h2>
+        <p>
+            <code>Marks should be less than 300!</code>
+        </p>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+
+<body>
+    <h2>Implicit Cursors</h2>
+    <h4>These cursors are automatically created by the database system for SQL statements that don't explicitly use
+        cursor declarations. They are used for simple queries that return a single result set.</h4>
+    <h2>Syntax..</h2>
+    <h4>BEGIN
+        <br>
+        SQL statement; -- The SQL statement that returns a result set
+        -- Processing logic here
+        <br>
+        END;
+    </h4>
+    <h2>Example Program</h2>
+    <table>
+        <caption>student table</caption>
+        <tr>
+            <th>rollno</th>
+            <th>name</th>
+            <th>ph no.</th>
+            <th>class</th>
+            <th>marks</th>
+            <th>city</th>
+        </tr>
+        <tr>
+            <td>4201</td>
+            <td>abhishek</td>
+            <td>1234567867</td>
+            <td>bca-1</td>
+            <td>296</td>
+            <td>chandigarh</td>
+        </tr>
+        <tr>
+            <td>4202</td>
+            <td>anjali</td>
+            <td>4567891234</td>
+            <td>bca-1</td>
+            <td>286</td>
+            <td>mohali</td>
+        </tr>
+        <tr>
+            <td>4203</td>
+            <td>asha</td>
+            <td>7719406253</td>
+            <td>bca-1</td>
+            <td>280</td>
+            <td>haryana</td>
+        </tr>
+        <tr>
+            <td>4204</td>
+            <td>neha</td>
+            <td>8876543219</td>
+            <td>bca-1</td>
+            <td>276</td>
+            <td>punjab</td>
+        </tr>
+    </table>
+    <p>
+        <code>DECLARE
+            <br>
+            noOfRows number;
+            <br>
+        BEGIN
+        <br>
+            update student set class = 'BCA-II' where marks > 280;
+            <br>
+            noOfRows := SQL%ROWCOUNT;
+            <br>
+            dbms_output.put_line(noOfRows || ' Rows Updated Successfully');
+            <br>
+        END;
+    </code>
+    </p>
+    <h2>Output</h2>
+    <p>
+        <code>3 Rows Updated Successfully</code>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>DECISION CONTROL STRUCTURES IN PLSQL</h2>
+    <h4>decision control structures are used to control the flow of execution based on certain conditions. The primary decision control structures in PL/SQL are:</h4>
+    <h2>1.IF-THEN-ELSE:</h2>
+    <h4>This structure allows you to execute a block of code if a condition is true and another block if the condition is false.</h4>
+    <h2>syntax..</h2>
+    <p>
+        <code>IF condition THEN
+            <br>
+            statement1;
+            <br>
+         ELSE
+         <br>
+            statement2;
+            <br>
+         END IF;
+        </code>
+    </p>
+    <h2>example..</h2>
+    <p>
+        <code> DECLARE
+            <br>
+            x NUMBER := 10;
+            <br>
+        BEGIN
+        <br>
+            IF x > 5 THEN
+            <br>
+                DBMS_OUTPUT.PUT_LINE('x is greater than 5');
+                <br>
+            ELSE
+            <br>
+                DBMS_OUTPUT.PUT_LINE('x is not greater than 5');
+                <br>
+            END IF;
+            <br>
+        END;
+    </code>
+    </p>
+
+    <h2>2.IF ELS IF:</h2>
+    <h4>This is used when you have multiple conditions to check.</h4>
+    <h2>syntax..</h2>
+    <p>
+        <code> IF condition1 THEN
+            <br>
+            statement1;
+            <br>
+         ELSIF condition2 THEN
+         <br>
+            statement2;
+            <br>
+         ELSE
+         <br>
+            statement3;
+            <br>
+         END IF;
+        </code>
+    </p>
+    <h4>example..</h4>
+    <p>
+        <code> DECLARE
+            <br>
+            x NUMBER := 3;
+            <br>
+        BEGIN
+        <br>
+            IF x > 5 THEN
+            <br>
+                DBMS_OUTPUT.PUT_LINE('x is greater than 5');
+                <br>
+            ELSIF x = 5 then
+            <br>
+                DBMS_OUTPUT.PUT_LINE('x is equal to 5');
+                <br>
+            ELSE
+            <br>
+                DBMS_OUTPUT.PUT_LINE('x is less than 5');
+                <br>
+            END IF;
+            <br>
+        END;
+    </code>
+    </p>
+    <h2>3.CASE Statement</h2>
+    <h4>It evaluates a list of conditions and executes the corresponding block of code for the first condition that is true.</h4>
+    <h2>syntax..</h2>
+    <p>
+        <code>CASE expression
+            <br>
+            WHEN condition1 THEN
+            <br>
+               statement1;
+               <br>
+            WHEN condition2 then
+            <br>
+               statement2;
+             <br>
+            ...
+            ELSE
+            <br>
+               statementN;
+               <br>
+         END CASE;
+        </code>
+    </p>
+    <h2>example..</h2>
+    <p>
+        <code>DECLARE
+            <br>
+            day VARCHAR2(10) := 'Wednesday';
+            <br>
+        BEGIN
+        <br>
+            CASE day
+            <br>
+                WHEN 'Monday' THEN
+                <br>
+                    DBMS_OUTPUT.PUT_LINE('It is Monday');
+                    <br>
+                WHEN 'Tuesday' THEN
+                <br>
+                    DBMS_OUTPUT.PUT_LINE('It is Tuesday');
+                    <br>
+                WHEN 'Wednesday' THEN
+                <br>
+                    DBMS_OUTPUT.PUT_LINE('It is Wednesday');
+                    <br>
+                WHEN 'Thursday' THEN
+                <br>
+                    DBMS_OUTPUT.PUT_LINE('It is Thursday');
+                    <br>
+                WHEN 'Friday' THEN
+                <br>
+                    DBMS_OUTPUT.PUT_LINE('It is Friday');
+                    <br>
+                ELSE
+                <br>
+                    DBMS_OUTPUT.PUT_LINE('It is a weekend');
+                    <br>
+            END CASE;
+            <br>
+        END;
+    </code>
+    </p>
+</body>
+</html>

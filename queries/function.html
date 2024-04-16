@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/code.css">
+</head>
+<body>
+    <h2>Functions in PL/SQL</h2>
+    <h4>In PL/SQL, functions are named PL/SQL blocks that can accept parameters, perform a specific task, and return a value. They are similar to procedures but differ in that they always return a single value. Functions are often used to encapsulate reusable logic and calculations, making code more modular and easier to maintain. Here's an overview of functions in PL/SQL:</h4>
+
+    <h2>Example Program</h2>
+    <p>
+        <code>Program to show the working of Functions</code>
+    </p>
+    <table>
+        <caption>student table</caption>
+        <tr>
+            <th>rollno</th>
+            <th>name</th>
+            <th>ph no.</th>
+            <th>class</th>
+            <th>marks</th>
+            <th>city</th>
+        </tr>
+        <tr>
+            <td>4201</td>
+            <td>abhishek</td>
+            <td>1234567867</td>
+            <td>bca-1</td>
+            <td>296</td>
+            <td>chandigarh</td>
+        </tr>
+        <tr>
+            <td>4202</td>
+            <td>anjali</td>
+            <td>4567891234</td>
+            <td>bca-1</td>
+            <td>286</td>
+            <td>mohali</td>
+        </tr>
+        <tr>
+            <td>4203</td>
+            <td>asha</td>
+            <td>7719406253</td>
+            <td>bca-1</td>
+            <td>280</td>
+            <td>haryana</td>
+        </tr>
+        <tr>
+            <td>4204</td>
+            <td>neha</td>
+            <td>8876543219</td>
+            <td>bca-1</td>
+            <td>276</td>
+            <td>punjab</td>
+        </tr>
+    </table>
+    <p>
+        <code>
+            CREATE OR REPLACE Function getName
+            <br>
+            (varrollNo IN student.rollNO%TYPE)
+            <br>
+            RETURN student.Name%TYPE
+            <br>
+            IS
+            <br>
+            var_name student.Name%TYPE;
+            <br>
+            BEGIN
+            <br>
+            SELECT Name INTO var_name FROM student WHERE rollNo = varrollNo;
+            <br>
+            RETURN var_name;
+            <br>
+            END; 
+        </code>
+    </p>
+    <h2>Output</h2>
+    <p>
+        <code>Function created.</code>
+    </p>
+    <h2>Executing Procedure get_Student</h2>
+    <p>
+        <code>BEGIN 
+            <br>
+            dbms_output.put_line('Name of Student : ' || getName('4201')); 
+            <br>
+        END;
+    </code>
+    </p>
+    <h2>output...</h2>
+    <p>
+        <code>
+            Name of Student : abhishek</code>
+    </p>
+</body>
+</html>
